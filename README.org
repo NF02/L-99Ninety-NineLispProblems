@@ -1,0 +1,11 @@
+* L-99: Ninety-Nine Lisp Problems
+Based on a Prolog problem list by werner.hett@hti.bfh.ch, in this collection of exercises performed in elisp.
+
+https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html
+** Topics covered
+ * Working with lists
+ * Logic and Codes
+ * Binary Trees
+ * Multiway Trees
+ * Graphs
+ * Miscellaneous Problems

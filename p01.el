@@ -8,9 +8,9 @@
 (defun my-last (l)
   (cond
    ;; base cases
-   ((eq l '()) ())
-   ((eq (cdr l) '()) l)
-   ;; recursive
-   ('t (my-last (cdr l)))))
+   ((eq l '()) '()) ;; empty list 
+   ((eq (cdr l) '()) l) ;; list consisting of a single element 
+   ;; else and recursive step
+   ('t (my-last (cdr l))))) ;; (my-last '(a b c d e)) --> (my-last '(b c d e)) --> (my-last '(c d e)) --> (my-last '(d e)) --> (my-last '(e))
 
 (my-last '(a b c d e)) ;; (e) the last item in the list

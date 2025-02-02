@@ -12,6 +12,6 @@
    ((eq (cdr l) '()) '()) ;; check the bottom of the list
    ((eq (cddr l) '())  l) ;; double check the bottom of the list (cdr (cdr l))
    ;; recursive step
-   ('t (my-but-last (cdr l))))
+   ('t (my-but-last (cdr l)))))
 
 (my-but-last '(a b c d e)) ;; (d e) 

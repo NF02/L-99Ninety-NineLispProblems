@@ -1,20 +1,23 @@
 #+title: L-99: Ninety-Nine Lisp Problems
 
-Based on a Prolog problem list by werner.hett@hti.bfh.ch
+Based on a Prolog problem list by ~werner.hett@hti.bfh.ch~
+
 Working with lists
 
 1. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p01.el][P01]] (*) Find the last box of a list.
    Example:
-   #+begin_src emacs-lisp
+   #+begin_src lisp
      (my-last '(a b c d))
       (D)
     #+end_src
-2. P02 (*) Find the last but one box of a list.
-    Example:
-    * (my-but-last '(a b c d))
-    (C D)
+2. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p02.el][P02]] (*) Find the last but one box of a list.
+   Example:
+   #+begin_src lisp
+     (my-but-last '(a b c d))
+      (C D)
+#+end_src
 
-P03 (*) Find the K'th element of a list.
+3. P03 (*) Find the K'th element of a list.
     The first element in the list is number 1.
     Example:
     * (element-at '(a b c d e) 3)
@@ -677,9 +680,9 @@ P97 (**) Sudoku
 #+begin_src 
        Problem statement                 Solution
 
-        .  .  4 | 8  .  . | .  1  7	 9  3  4 | 8  2  5 | 6  1  7	     
+        .  .  4 | 8  .  . | .  1  7      9  3  4 | 8  2  5 | 6  1  7	     
                 |         |                      |         |
-        6  7  . | 9  .  . | .  .  .	 6  7  2 | 9  1  4 | 8  5  3
+        6  7  . | 9  .  . | .  .  .      6  7  2 | 9  1  4 | 8  5  3
                 |         |                      |         |
         5  .  8 | .  3  . | .  .  4      5  1  8 | 6  3  7 | 9  2  4
         --------+---------+--------      --------+---------+--------

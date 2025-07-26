@@ -9,3 +9,11 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nin
  * Multiway Trees
  * Graphs
  * Miscellaneous Problems
+
+** Disclaimer and Provenance Notes
+
+This page contains a transcription of problems sourced from https://www.ic.unicamp.br/~meidanis/courses/mc336/problemas-lisp/L-99_Ninety-Nine_Lisp_Problems.html.
+
+We do not claim any ownership or copyright over the original exercises presented on this page. These exercises belong to their respective authors and are provided here for reference and consultation purposes.
+
+The solutions to these exercises presented in this repository are my original work. As such, the intellectual property of these implementations belongs to me, as detailed in the LICENSE file included within this repository.

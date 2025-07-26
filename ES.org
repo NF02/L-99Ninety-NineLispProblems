@@ -11,73 +11,81 @@ respective authors and are provided here for reference and consultation purposes
 The solutions to these exercises presented in this repository are my original work. As such, the intellectual property of these implementations belongs to
 me, as detailed in the license file included within this repository.
 #+end_comment
+
 Based on a Prolog problem list by ~werner.hett@hti.bfh.ch~
 
 Working with lists
 
 1. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p01.el][P01]] (*) Find the last box of a list.
    Example:
-   #+begin_src lisp
+#+begin_src lisp
      (my-last '(a b c d))
       (D)
-    #+end_src
+#+end_src
 2. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p02.el][P02]] (*) Find the last but one box of a list.
    Example:
-   #+begin_src lisp
-     (my-but-last '(a b c d))
-      (C D)
+#+begin_src lisp
+  (my-but-last '(a b c d))
+   (C D)
 #+end_src
 
-3. P03 (*) Find the K'th element of a list.
-    The first element in the list is number 1.
-    Example:
-    * (element-at '(a b c d e) 3)
-    C
+3. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p03.el][P03]] (*) Find the K'th element of a list.
+   The first element in the list is number 1.
+   Example:
+#+begin_src lisp 
+  (element-at '(a b c d e) 3)
+   (C)
+#+end_src
+4. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p04.el][P04]] (*) Find the number of elements of a list.
 
-P04 (*) Find the number of elements of a list.
+5. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p05.el][P05]] (*) Reverse a list.
 
-P05 (*) Reverse a list.
+6. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p06.el][P06]] (*) Find out whether a list is a palindrome.
+   A palindrome can be read forward or backward; e.g. (x a m a x).
 
-P06 (*) Find out whether a list is a palindrome.
-    A palindrome can be read forward or backward; e.g. (x a m a x).
+7. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p07.el][P07]] (**) Flatten a nested list structure.
+   Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).
 
-P07 (**) Flatten a nested list structure.
-    Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).
-
-    Example:
-    * (my-flatten '(a (b (c d) e)))
-    (A B C D E)
-
+   Example:
+#+begin_src lisp
+  (my-flatten '(a (b (c d) e)))
+   (A B C D E)
+#+end_src
     Hint: Use the predefined functions list and append.
 
-P08 (**) Eliminate consecutive duplicates of list elements.
+8. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p08.el][P08]] (**) Eliminate consecutive duplicates of list elements.
     If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
     Example:
-    * (compress '(a a a a b c c a a d e e e e))
-    (A B C A D E)
+#+begin_src lisp
+  (compress '(a a a a b c c a a d e e e e))
+   (A B C A D E)
+#+end_src
 
-P09 (**) Pack consecutive duplicates of list elements into sublists.
-    If a list contains repeated elements they should be placed in separate sublists.
+9. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p09.el][P09]] (**) Pack consecutive duplicates of list elements into sublists.
+   If a list contains repeated elements they should be placed in separate sublists.
 
-    Example:
-    * (pack '(a a a a b c c a a d e e e e))
-    ((A A A A) (B) (C C) (A A) (D) (E E E E))
+   Example:
+#+begin_src lisp    
+  (pack '(a a a a b c c a a d e e e e))
+   ((A A A A) (B) (C C) (A A) (D) (E E E E))
+#+end_src
 
-P10 (*) Run-length encoding of a list.
+10. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p10.el][P10]] (*) Run-length encoding of a list.
     Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E.
 
     Example:
     * (encode '(a a a a b c c a a d e e e e))
     ((4 A) (1 B) (2 C) (2 A) (1 D)(4 E))
 
-P11 (*) Modified run-length encoding.
+11. [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p11.el][P11]] (*) Modified run-length encoding.
     Modify the result of problem P10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as (N E) lists.
 
     Example:
-    * (encode-modified '(a a a a b c c a a d e e e e))
-    ((4 A) B (2 C) (2 A) D (4 E))
-
+#+begin_src lisp
+  (encode-modified '(a a a a b c c a a d e e e e))
+   ((4 A) B (2 C) (2 A) D (4 E))
+#+end_src
 P12 (**) Decode a run-length encoded list.
     Given a run-length code list generated as specified in problem P11. Construct its uncompressed version.
 

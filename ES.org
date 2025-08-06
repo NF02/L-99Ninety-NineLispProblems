@@ -148,8 +148,9 @@ Working with lists
     *Hint*: Use the predefined functions length and append, as well as the result of problem P17.
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p20.el][P20]] (*) Remove the K'th element from a list.
-   Example:
- #+begin_src lisp 
+
+   Example: 
+   #+begin_src lisp
    (remove-at '(a b c d) 2)
     (A C D)
 #+end_src
@@ -161,41 +162,54 @@ Working with lists
       (A ALFA B C D)
     #+end_src
     
-P22 (*) Create a list containing all integers within a given range.
-    If first argument is smaller than second, produce a list in decreasing order.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p22.el][P22]] (*) Create a list containing all integers within a given range.
+   If first argument is smaller than second, produce a list in decreasing order.
+
+   Example:
+   #+begin_src lisp
+     (range 4 9)
+      (4 5 6 7 8 9)
+   #+end_src
+
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p23.el][P23]] (**) Extract a given number of randomly selected elements from a list.
+   The selected items shall be returned in a list.
+    
     Example:
-    * (range 4 9)
-    (4 5 6 7 8 9)
+    #+begin_src lisp
+      (rnd-select '(a b c d e f g h) 3)
+       (E D A)
+    #+end_src
+    *Hint*: Use the built-in random number generator and the result of problem P20.
 
-P23 (**) Extract a given number of randomly selected elements from a list.
-    The selected items shall be returned in a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p24.el][P24]] (*) Lotto: Draw N different random numbers from the set 1..M.
+   The selected numbers shall be returned in a list.
+
+   Example:
+   #+begin_src lisp
+     (lotto-select 6 49)
+      (23 1 17 33 21 37)
+    #+end_src
+   *Hint*: Combine the solutions of problems P22 and P23.
+
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p25.el][P25]] (*) Generate a random permutation of the elements of a list.
     Example:
-    * (rnd-select '(a b c d e f g h) 3)
-    (E D A)
+    #+begin_src lisp
+      (rnd-permu '(a b c d e f))
+       (B A D C E F)
+    #+end_src
+    *Hint*: Use the solution of problem P23.
 
-    Hint: Use the built-in random number generator and the result of problem P20.
-
-P24 (*) Lotto: Draw N different random numbers from the set 1..M.
-    The selected numbers shall be returned in a list.
-    Example:
-    * (lotto-select 6 49)
-    (23 1 17 33 21 37)
-
-    Hint: Combine the solutions of problems P22 and P23.
-
-P25 (*) Generate a random permutation of the elements of a list.
-    Example:
-    * (rnd-permu '(a b c d e f))
-    (B A D C E F)
-
-    Hint: Use the solution of problem P23.
-
-P26 (**) Generate the combinations of K distinct objects chosen from the N elements of a list
-    In how many ways can a committee of 3 be chosen from a group of 12 people? We all know that there are C(12,3) = 220 possibilities (C(N,K) denotes the well-known binomial coefficients). For pure mathematicians, this result may be great. But we want to really generate all the possibilities in a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p26.el][P26]] (**) Generate the combinations of K distinct objects chosen from the N elements of a list
+   In how many ways can a committee of 3 be chosen from a group of 12 people? We all know that there
+   are C(12,3) = 220 possibilities (C(N,K) denotes the well-known binomial coefficients). For pure
+   mathematicians, this result may be great. But we want to really generate all the possibilities in
+   a list.
 
     Example:
-    * (combination 3 '(a b c d e f))
-    ((A B C) (A B D) (A B E) ... )
+    #+begin_src lisp
+      (combination 3 '(a b c d e f))
+       ((A B C) (A B D) (A B E) ... )
+    #+end_src
 
 P27 (**) Group the elements of a set into disjoint subsets.
     a) In how many ways can a group of 9 people work in 3 disjoint subgroups of 2, 3 and 4 persons? Write a function that generates all the possibilities and returns them in a list.

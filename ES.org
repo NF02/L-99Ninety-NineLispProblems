@@ -16,7 +16,7 @@ Based on a Prolog problem list by ~werner.hett@hti.bfh.ch~
 
 Working with lists
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p01.el][P01]] (*) Find the last box of a list.
+ * [[Https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p01.el][P01]] (*) Find the last box of a list.
    Example:
 #+begin_src lisp
      (my-last '(a b c d))
@@ -29,16 +29,16 @@ Working with lists
    (C D)
 #+end_src
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p03.el][P03]] (*) Find the K'th element of a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p03.el][P03]] (*) Find the K'th element of a list.
    The first element in the list is number 1.
    Example:
 #+begin_src lisp 
   (element-at '(a b c d e) 3)
    (C)
 #+end_src
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p04.el][P04]] (*) Find the number of elements of a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p04.el][P04]] (*) Find the number of elements of a list.
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p05.el][P05]] (*) Reverse a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p05.el][P05]] (*) Reverse a list.
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p06.el][P06]] (*) Find out whether a list is a palindrome.
    A palindrome can be read forward or backward; e.g. (x a m a x).
@@ -105,20 +105,20 @@ Working with lists
       (dupli '(a b c c d))
        (A A B B C C C C D D)
 #+end_src
- * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p15.el][P15]] (**) Replicate the elements of a list a given number of times.
+ * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/src/p15.el][P15]] (**) Replicate the elements of a list a given number of times.
    Example:
     #+begin_src lisp
       (repli '(a b c) 3)
        (A A A B B B C C C)
 #+end_src
- * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p16.el][P16]] (**) Drop every N'th element from a list.
+ * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/src/p16.el][P16]] (**) Drop every N'th element from a list.
    Example:
     #+begin_src lisp
       (drop '(a b c d e f g h i k) 3)
        (A B D E G H K)
 #+end_src
 
- * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p17.el][P17]] (*) Split a list into two parts; the length of the first part is given.
+ * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/src/p17.el][P17]] (*) Split a list into two parts; the length of the first part is given.
     Do not use any predefined functions.
 
     Example:
@@ -126,7 +126,7 @@ Working with lists
       (split '(a b c d e f g h i k) 3)
        ((A B C) (D E F G H I K))
 #+end_src
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p18.el][P18]] (**) Extract a slice from a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p18.el][P18]] (**) Extract a slice from a list.
    Given two indices, I and K, the slice is the list containing the elements between the I'th and K'th element of the original
    list (both limits included). Start counting the elements with 1.
    
@@ -136,7 +136,7 @@ Working with lists
       (C D E F G)
     #+end_src
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p19.el][P19]] (**) Rotate a list N places to the left.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p19.el][P19]] (**) Rotate a list N places to the left.
    Examples:
     #+begin_src lisp
       (rotate '(a b c d e f g h) 3)
@@ -147,20 +147,20 @@ Working with lists
 #+end_src
     *Hint*: Use the predefined functions length and append, as well as the result of problem P17.
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p20.el][P20]] (*) Remove the K'th element from a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p20.el][P20]] (*) Remove the K'th element from a list.
    Example:
  #+begin_src lisp 
    (remove-at '(a b c d) 2)
     (A C D)
 #+end_src
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p21.el][P21]] (*) Insert an element at a given position into a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p21.el][P21]] (*) Insert an element at a given position into a list.
    Example:
    #+begin_src lisp
      (insert-at 'alfa '(a b c d) 2)
       (A ALFA B C D)
     #+end_src
-
+    
 P22 (*) Create a list containing all integers within a given range.
     If first argument is smaller than second, produce a list in decreasing order.
     Example:

@@ -99,7 +99,7 @@ Working with lists
       (encode-direct '(a a a a b c c a a d e e e e))
        ((4 A) B (2 C) (2 A) D (4 E))
 #+end_src
- * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p14.el][P14]] (*) Duplicate the elements of a list.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p14.el][P14]] (*) Duplicate the elements of a list.
    Example:
     #+begin_src lisp
       (dupli '(a b c c d))

@@ -100,19 +100,19 @@ Working with lists
        ((4 A) B (2 C) (2 A) D (4 E))
 #+end_src
  * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p14.el][P14]] (*) Duplicate the elements of a list.
-    Example:
+   Example:
     #+begin_src lisp
       (dupli '(a b c c d))
        (A A B B C C C C D D)
 #+end_src
  * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p15.el][P15]] (**) Replicate the elements of a list a given number of times.
-    Example:
+   Example:
     #+begin_src lisp
       (repli '(a b c) 3)
        (A A A B B B C C C)
 #+end_src
  * [[https://github.com/NF02/L-99Ninety-NineLispProblems/blob/main/p16.el][P16]] (**) Drop every N'th element from a list.
-    Example:
+   Example:
     #+begin_src lisp
       (drop '(a b c d e f g h i k) 3)
        (A B D E G H K)
@@ -126,32 +126,40 @@ Working with lists
       (split '(a b c d e f g h i k) 3)
        ((A B C) (D E F G H I K))
 #+end_src
-P18 (**) Extract a slice from a list.
-    Given two indices, I and K, the slice is the list containing the elements between the I'th and K'th element of the original list (both limits included). Start counting the elements with 1.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p18.el][P18]] (**) Extract a slice from a list.
+   Given two indices, I and K, the slice is the list containing the elements between the I'th and K'th element of the original
+   list (both limits included). Start counting the elements with 1.
+   
+   Example:
+   #+begin_src lisp
+     (slice '(a b c d e f g h i k) 3 7)
+      (C D E F G)
+    #+end_src
 
-    Example:
-    * (slice '(a b c d e f g h i k) 3 7)
-    (C D E F G)
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p19.el][P19]] (**) Rotate a list N places to the left.
+   Examples:
+    #+begin_src lisp
+      (rotate '(a b c d e f g h) 3)
+       (D E F G H A B C)
 
-P19 (**) Rotate a list N places to the left.
-    Examples:
-    * (rotate '(a b c d e f g h) 3)
-    (D E F G H A B C)
+      (rotate '(a b c d e f g h) -2)
+       (G H A B C D E F)
+#+end_src
+    *Hint*: Use the predefined functions length and append, as well as the result of problem P17.
 
-    * (rotate '(a b c d e f g h) -2)
-    (G H A B C D E F)
-
-    Hint: Use the predefined functions length and append, as well as the result of problem P17.
-
-P20 (*) Remove the K'th element from a list.
-    Example:
-    * (remove-at '(a b c d) 2)
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p20.el][P20]] (*) Remove the K'th element from a list.
+   Example:
+ #+begin_src lisp 
+   (remove-at '(a b c d) 2)
     (A C D)
+#+end_src
 
-P21 (*) Insert an element at a given position into a list.
-    Example:
-    * (insert-at 'alfa '(a b c d) 2)
-    (A ALFA B C D)
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/p21.el][P21]] (*) Insert an element at a given position into a list.
+   Example:
+   #+begin_src lisp
+     (insert-at 'alfa '(a b c d) 2)
+      (A ALFA B C D)
+    #+end_src
 
 P22 (*) Create a list containing all integers within a given range.
     If first argument is smaller than second, produce a list in decreasing order.

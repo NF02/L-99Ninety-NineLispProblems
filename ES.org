@@ -221,8 +221,8 @@ Working with lists
 	  ( ( (ALDO BEAT) (CARLA DAVID EVI) (FLIP GARY HUGO IDA) )
 	   ... )
        #+end_src
- * Generalize the above function in a way that we can specify a list of group sizes and the function will return a list of groups.
-
+   * Generalize the above function in a way that we can specify a list of group sizes and the function will return a list of groups.
+     
    Example:
                #+begin_src lisp
         (group '(aldo beat carla david evi flip gary hugo ida) '(2 2 5))
@@ -249,18 +249,23 @@ Working with lists
 
 ** Arithmetic
 
-P31 (**) Determine whether a given integer number is prime.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p31.el][P31]] (**) Determine whether a given integer number is prime.
     Example:
-    * (is-prime 7)
-    T
+    #+begin_src lisp
+      (is-prime 7)
+       T
+#+end_src
 
-P32 (**) Determine the greatest common divisor of two positive integer numbers.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p32.el][P32]] (**) Determine the greatest common divisor of two positive integer numbers.
     Use Euclid's algorithm.
-    Example:
-    * (gcd 36 63)
-    9
 
-P33 (*) Determine whether two positive integer numbers are coprime.
+    Example:
+    #+begin_src lisp
+      (gcd 36 63)
+       9
+    #+end_src
+
+ * P33 (*) Determine whether two positive integer numbers are coprime.
     Two numbers are coprime if their greatest common divisor equals 1.
     Example:
     * (coprime 35 64)

@@ -1,16 +1,10 @@
-(defun phi-improved (prime-factors)
-  "Calculate Euler's totient function phi(m) using the prime factors of m.
-PRIME-FACTORS is a list of (prime exponent) pairs."
-  (if (null prime-factors)
-      1  ; phi(1) is 1
-    (let* ((pair (car prime-factors))
-           (p (car pair))
-           (m (cadr pair)))
-      (* (1- p)
-         (expt p (1- m))
-         (phi-improved (cdr prime-factors))))))
+(defun prime-factors-mult (n)
+  "Determine the prime factors of a given positive integer (2)."
+  (defun factor-helper (n divisor count factors)
+    (cond ((= n 1) (if (zerop count) factors (cons (list divisor count) factors)))
+          ((zerop (mod n divisor)) (factor-helper (/ n divisor) divisor (1+ count) factors))
+          (t (factor-helper n (1+ divisor) 0 (if (zerop count) factors (cons (list divisor count) factors))))))
+  (reverse (factor-helper n 2 0 '())))
 
-;; Example Usage
-(phi-improved '((2 1) (5 1)))  ; => 4 (phi(10) = 4)
-(phi-improved '((2 3)))        ; => 4 (phi(8) = 4)
-(phi-improved '((3 2)))        ; => 6 (phi(9) = 6)
+;; example usage
+(prime-factors-mult 315) ;; =>  ((3 2) (5 1) (7 1))

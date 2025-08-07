@@ -301,42 +301,45 @@ Working with lists
    Construct a list containing the prime factors and their multiplicity.
 
    Example:
-    * (prime-factors-mult 315)
-    ((3 2) (5 1) (7 1))
-
-    Hint: The problem is similar to problem P10.
+   #+begin_src lisp
+     (prime-factors-mult 315)
+      ((3 2) (5 1) (7 1))
+#+end_src
+    *Hint*: The problem is similar to problem P10.
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p37.el][P37]] (**) Calculate Euler's totient function $\phi(m)$ (improved).
-    See problem P34 for the definition of Euler's totient function. If the list of the prime
-    factors of a number m is known in the form of problem P36 then the function $\phi(m)$ can be
-    efficiently calculated as follows: Let $((p_1 m_1) (p_2 m_2) (p_3 m_3) \dots)$ be the list of prime
-    factors (and their multiplicities) of a given number $m$. Then $\phi(m)$ can be calculated with
-    the following formula:
+   See problem P34 for the definition of Euler's totient function. If the list of the prime
+   factors of a number m is known in the form of problem P36 then the function $\phi(m)$ can be
+   efficiently calculated as follows: Let $((p_1 m_1) (p_2 m_2) (p_3 m_3) \dots)$ be the list of prime
+   factors (and their multiplicities) of a given number $m$. Then $\phi(m)$ can be calculated with
+   the following formula:
 
-    $\phi(m)=(p_1-1)*p_1**(m_1-1)*(p_2-1)*p_2**(m_2-1)*(p_3-1)*p_3**(m3-1)*\dots$
-    or \[
-    \phi(m) = \prod_{i=1}^k (p_i - 1) \times p_i^{m_i - 1}
-\] or \[
-\phi(m) = m \times \prod_{p_i \mid m} \left(1 - \frac{1}{p_i}\right)
-\]
+   $\phi(m)=(p_1-1)*p_1**(m_1-1)*(p_2-1)*p_2**(m_2-1)*(p_3-1)*p_3**(m3-1)*\dots$
+   or $\phi(m) = \prod_{i=1}^k (p_i - 1) \times p_i^{m_i - 1}$ or $\phi(m) = m \times \prod_{p_i \mid m} \left(1 - \frac{1}{p_i}\right)$
 
-    Note that $a ** b$ stands for the b'th power of $a$.
-
+   Note that $a ** b$ stands for the b'th power of $a$.
+ 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p38.el][P38]] (*) Compare the two methods of calculating Euler's totient function.
    Use the solutions of problems P34 and P37 to compare the algorithms. Take the number of basic
    operations, including CARs, CDRs, CONSes, and arithmetic operations, as a measure for efficiency.
    Try to calculate $\phi(1009^0)$ as an example.
 
- * P39 (*) A list of prime numbers.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p39.el][P39]] (*) A list of prime numbers.
    Given a range of integers by its lower and upper limit, construct a list of all prime numbers in
    that range.
 
-P40 (**) Goldbach's conjecture.
-    Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers. Example: 28 = 5 + 23. It is one of the most famous facts in number theory that has not been proved to be correct in the general case. It has been numerically confirmed up to very large numbers (much larger than we can go with our Lisp system). Write a function to find the two prime numbers that sum up to a given even integer.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p40.el][P40]] (**) Goldbach's conjecture.
+   Goldbach's conjecture says that every positive even number greater than 2 is the sum of two
+   prime numbers. Example: $28 = 5 + 23$. It is one of the most famous facts in number theory that has
+   not been proved to be correct in the general case. It has been numerically confirmed up to very large
+   numbers (/much larger than we can go with our Lisp system/). Write a function to find the two prime
+   numbers that sum up to a given even integer.
 
-    Example:
-    * (goldbach 28)
-    (5 23)
+   Example:
+   #+begin_src lisp
+     (goldbach 28)
+      (5 23)
+    #+end_src
 
 P41 (**) A list of Goldbach compositions.
     Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.

@@ -1,5 +1,5 @@
 #+title: L-99: Ninety-Nine Lisp Problems
-
+#+author: Nicola Ferru AKA NFVblog
 #+begin_comment
 Disclaimer and Provenance Notes
 

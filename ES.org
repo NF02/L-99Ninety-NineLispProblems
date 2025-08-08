@@ -1,6 +1,7 @@
 #+title: L-99: Ninety-Nine Lisp Problems
 #+author: Nicola Ferru AKA NFVblog
 #+email: ask at nfvblog at outlook dot it
+
 #+begin_comment
 Disclaimer and Provenance Notes
 
@@ -45,7 +46,8 @@ Working with lists
    A palindrome can be read forward or backward; e.g. (x a m a x).
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p07.el][P07]] (**) Flatten a nested list structure.
-   Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).
+   Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements
+   (recursively).
 
    Example:
 #+begin_src lisp
@@ -55,9 +57,10 @@ Working with lists
     Hint: Use the predefined functions list and append.
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p08.el][P08]] (**) Eliminate consecutive duplicates of list elements.
-    If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
+   If a list contains repeated elements they should be replaced with a single copy of the element. The order
+   of the elements should not be changed.
 
-    Example:
+   Example:
 #+begin_src lisp
   (compress '(a a a a b c c a a d e e e e))
    (A B C A D E)
@@ -73,9 +76,10 @@ Working with lists
 #+end_src
 
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p10.el][P10]] (*) Run-length encoding of a list.
-    Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E.
-
-    Example:
+   Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive
+   duplicates of elements are encoded as lists ~(N E)~ where N is the number of duplicates of the element E.
+    
+   Example:
 #+begin_src lisp
   (encode '(a a a a b c c a a d e e e e))
    ((4 A) (1 B) (2 C) (2 A) (1 D)(4 E))
@@ -128,8 +132,8 @@ Working with lists
        ((A B C) (D E F G H I K))
 #+end_src
  * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p18.el][P18]] (**) Extract a slice from a list.
-   Given two indices, I and K, the slice is the list containing the elements between the I'th and K'th element of the original
-   list (both limits included). Start counting the elements with 1.
+   Given two indices, I and K, the slice is the list containing the elements between the I'th and K'th element of the
+   original list (both limits included). Start counting the elements with 1.
    
    Example:
    #+begin_src lisp
@@ -341,87 +345,110 @@ Working with lists
       (5 23)
     #+end_src
 
-P41 (**) A list of Goldbach compositions.
-    Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.
+ * P41 (**) A list of Goldbach compositions.
+   Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach
+   composition.
 
-    Example:
-    * (goldbach-list 9 20)
-    10 = 3 + 7
-    12 = 5 + 7
-    14 = 3 + 11
-    16 = 3 + 13
-    18 = 5 + 13
-    20 = 3 + 17
+   Example:
+   #+begin_src lisp
+     (goldbach-list 9 20)
+      10 = 3 + 7
+      12 = 5 + 7
+      14 = 3 + 11
+      16 = 3 + 13
+      18 = 5 + 13
+      20 = 3 + 17
+     #+end_src
 
-    In most cases, if an even number is written as the sum of two prime numbers, one of them is very small. Very rarely, the primes are both bigger than say 50. Try to find out how many such cases there are in the range 2..3000.
+   In most cases, if an even number is written as the sum of two prime numbers, one of them is very small. Very
+   rarely, the primes are both bigger than say $50$. Try to find out how many such cases there are in the range $2\dots3000$.
 
-    Example (for a print limit of 50):
-    * (goldbach-list 1 2000 50)
-    992 = 73 + 919
-    1382 = 61 + 1321
-    1856 = 67 + 1789
-    1928 = 61 + 1867
+   Example (for a print limit of 50):
+   #+begin_src lisp
+     (goldbach-list 1 2000 50)
+      992 = 73 + 919
+      1382 = 61 + 1321
+      1856 = 67 + 1789
+      1928 = 61 + 1867
+   #+end_src
 
-Logic and Codes
+** Logic and Codes
 
-P46 (**) Truth tables for logical expressions.
-    Define functions and, or, nand, nor, xor, impl and equ (for logical equivalence) which return the result of the respective operation on boolean values.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/][P46]] (**) Truth tables for logical expressions.
+   Define functions *and, or, nand, nor, xor, impl and equ* (for logical equivalence) which return the result of
+   the respective operation on boolean values.
 
-    A logical expression in two variables can then be written in prefix notation, as in the following example: (and (or A B) (nand A B)).
+   A logical expression in two variables can then be written in prefix notation, as in the following
+   example: ~(and (or A B) (nand A B))~.
 
-    Write a function table which prints the truth table of a given logical expression in two variables.
+   Write a function table which prints the truth table of a given logical expression in two variables.
 
-    Example:
-    * (table 'A 'B '(and A (or A B))).
-    true true true
-    true nil true
-    nil true nil
-    nil nil nil
+   Example:
+   #+begin_src lisp
+     (table 'A 'B '(and A (or A B))).
+      true true true
+      true nil true
+      nil true nil
+      nil nil nil
+    #+end_src
 
-P47 (*) Truth tables for logical expressions (2).
-    Modify problem P46 by accepting expressions written in infix notation, with all parenthesis present. This allows us to write logical expression in a more natural way, as in the example: (A and (A or (not B))).
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p47.el][P47]] (*) Truth tables for logical expressions (2).
+   Modify problem P46 by accepting expressions written in infix notation, with all parenthesis present. This allows
+   us to write logical expression in a more natural way, as in the example: ~(A and (A or (not B)))~.
 
-    Example:
-    * (table 'A 'B '(A and (A or (not B)))).
-    true true true
-    true nil true
-    nil true nil
-    nil nil nil
+   Example:
+   #+begin_src lisp
+     (table 'A 'B '(A and (A or (not B)))).
+      true true true
+      true nil true
+      nil true nil
+      nil nil nil
+   #+end_src
 
-P48 (**) Truth tables for logical expressions (3).
-    Generalize problem P47 in such a way that the logical expression may contain any number of logical variables. Define table in a way that (table List Expr) prints the truth table for the expression Expr, which contains the logical variables enumerated in List.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p48.el][P48]] (**) Truth tables for logical expressions (3).
+   Generalize problem P47 in such a way that the logical expression may contain any number of logical variables.
+   Define table in a way that ~(table List Expr)~ prints the truth table for the expression Expr, which contains the
+   logical variables enumerated in List.
 
-    Example:
-    * (table '(A B C) '((A and (B or C)) equ ((A and B) or (A and C)))).
-    true true true true
-    true true nil true
-    true nil true true
-    true nil nil true
-    nil true true true
-    nil true nil true
-    nil nil true true
-    nil nil nil true
+   Example:
+   #+begin_src lisp
+     (table '(A B C) '((A and (B or C)) equ ((A and B) or (A and C)))).
+      true true true true
+      true true nil true
+      true nil true true
+      true nil nil true
+      nil true true true
+      nil true nil true
+      nil nil true true
+      nil nil nil true
+    #+end_src
 
-P49 (**) Gray code.
-    An n-bit Gray code is a sequence of n-bit strings constructed according to certain rules. For example,
-    n = 1: C(1) = ("0" "1").
-    n = 2: C(2) = ("00" "01" "11" "10").
-    n = 3: C(3) = ("000" "001" "011" "010" "110" "111" "101" "100").
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p49.el][P49]] (**) Gray code.
+   An n-bit Gray code is a sequence of n-bit strings constructed according to certain rules. For example,
+   - n = 1: C(1) = ("0" "1").
+   - n = 2: C(2) = ("00" "01" "11" "10").
+   - n = 3: C(3) = ("000" "001" "011" "010" "110" "111" "101" "100").
 
-    Find out the construction rules and write a function with the following specification:
+   Find out the construction rules and write a function with the following specification:
 
-    (gray N) returns the N-bit Gray code
+   ~(gray N)~ returns the N-bit Gray code
 
-    Can you apply the method of "result caching" in order to make the function more efficient, when it is to be used repeatedly?
+   Can you apply the method of "result caching" in order to make the function more efficient, when it is to
+   be used repeatedly?
 
-P50 (***) Huffman code.
-    First of all, consult a good book on discrete mathematics or algorithms for a detailed description of Huffman codes!
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p50.el][P50]] (***) Huffman code.
+   First of all, consult a good book on discrete mathematics or algorithms for a detailed description of Huffman
+   codes!
+   
+   We suppose a set of symbols with their frequencies, given as a list of (S F) elements. Example:
+   ( (a 45) (b 13) (c 12) (d 16) (e 9) (f 5) ). Our objective is to construct a list of (S C) elements, where C
+   is the Huffman code word for symbol S. In our example, the result could be
+   ( (A "0") (B "101") (C "100") (D "111") (E "1101") (F "1100") ). The task shall be performed by a
+   function huffman defined as follows:
+    
+   (huffman F) returns the Huffman code table for the frequency table F
 
-    We suppose a set of symbols with their frequencies, given as a list of (S F) elements. Example: ( (a 45) (b 13) (c 12) (d 16) (e 9) (f 5) ). Our objective is to construct a list of (S C) elements, where C is the Huffman code word for symbol S. In our example, the result could be ( (A "0") (B "101") (C "100") (D "111") (E "1101") (F "1100") ). The task shall be performed by a function huffman defined as follows:
-
-    (huffman F) returns the Huffman code table for the frequency table F
-
-Binary Trees
+** Binary Trees
 
 A binary tree is either empty or it is composed of a root element and two successors, which are binary trees themselves.
 In Lisp we represent the empty tree by 'nil' and the non-empty tree by the list (X L R), where X denotes the information at the root node and L and R denote the left and right subtrees, respectively. The example tree depicted opposite is therefore represented by the following list:

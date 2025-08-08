@@ -345,7 +345,7 @@ Working with lists
       (5 23)
     #+end_src
 
- * P41 (**) A list of Goldbach compositions.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p41.el][P41]] (**) A list of Goldbach compositions.
    Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach
    composition.
 
@@ -374,7 +374,7 @@ Working with lists
 
 ** Logic and Codes
 
- * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/][P46]] (**) Truth tables for logical expressions.
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p46.el][P46]] (**) Truth tables for logical expressions.
    Define functions *and, or, nand, nor, xor, impl and equ* (for logical equivalence) which return the result of
    the respective operation on boolean values.
 

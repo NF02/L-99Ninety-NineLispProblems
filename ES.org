@@ -461,30 +461,43 @@ Other examples are a binary tree that consists of a root node only:
 
 You can check your functions using these example trees. They are given as test cases in p54.lisp.
 
-P54A (*) Check whether a given expression represents a binary tree
-    Write a function istree which returns true if and only if its argument is a list representing a binary tree.
-    Example:
-    * (istree '(a (b nil nil) nil))
-    T
-    * (istree '(a (b nil nil)))
-    NIL
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p54a,el][P54A]] (*) Check whether a given expression represents a binary tree
+   Write a function istree which returns true if and only if its argument is a list representing a binary tree.
 
-P55 (**) Construct completely balanced binary trees
-    In a completely balanced binary tree, the following property holds for every node: The number of nodes in its left subtree and the number of nodes in its right subtree are almost equal, which means their difference is not greater than one.
+   Example:
+   #+begin_src lisp 
+   (istree '(a (b nil nil) nil))
+   T
 
-    Write a function cbal-tree to construct completely balanced binary trees for a given number of nodes. The function should generate all solutions. Put the symbol 'x' as information into all nodes of the tree.
-    Example:
-    * (cbal-tree-print 4)
-    (X (X NIL NIL) (X NIL (X NIL NIL)))
-    (X (X NIL NIL) (X (X NIL NIL) NIL))
-    etc......
+   (istree '(a (b nil nil)))
+   NIL
+   #+end_src
+
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p55.el][P55]] (**) Construct completely balanced binary trees
+   In a completely balanced binary tree, the following property holds for every node: The number of nodes in its
+   left subtree and the number of nodes in its right subtree are almost equal, which means their difference is not
+   greater than one.
+
+   Write a function cbal-tree to construct completely balanced binary trees for a given number of nodes. The function
+   should generate all solutions. Put the symbol 'x' as information into all nodes of the tree.
+
+   Example:
+   #+begin_src lisp
+     (cbal-tree-print 4)
+      (X (X NIL NIL) (X NIL (X NIL NIL)))
+      (X (X NIL NIL) (X (X NIL NIL) NIL))
+      etc......
+    #+end_src
 
     Note: you can either print the trees or return a list with them all.
-    * (cbal-tree 4)
-    ((X (X NIL NIL) (X NIL (X NIL NIL))) (X (X NIL NIL) (X (X NIL NIL) NIL)) ......)
-
-P56 (**) Symmetric binary trees
-    Let us call a binary tree symmetric if you can draw a vertical line through the root node and then the right subtree is the mirror image of the left subtree. Write a function symmetric to check whether a given binary tree is symmetric. We are only interested in the structure, not in the contents of the nodes.
+    #+begin_src lisp
+      (cbal-tree 4)
+       ((X (X NIL NIL) (X NIL (X NIL NIL))) (X (X NIL NIL) (X (X NIL NIL) NIL)) ......)
+    #+end_src
+ * [[https://raw.githubusercontent.com/NF02/L-99Ninety-NineLispProblems/refs/heads/main/src/p56.el][P56]] (**) Symmetric binary trees
+   Let us call a binary tree symmetric if you can draw a vertical line through the root node and then the right
+   subtree is the mirror image of the left subtree. Write a function symmetric to check whether a given binary tree
+   is symmetric. We are only interested in the structure, not in the contents of the nodes.
 
 P57 (**) Binary search trees (dictionaries)
     Write a function to construct a binary search tree from a list of integer numbers.

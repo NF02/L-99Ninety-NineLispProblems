@@ -1,0 +1,31 @@
+(defun cbal-tree (n)
+  "Construct completely balanced binary trees"
+  (cond
+    ((= n 0) '(nil))
+    ((= n 1) '((x nil nil)))
+    (t
+     (let ((trees nil))
+       (if (not (zerop (mod n 2)))
+           (let* ((k (/ (- n 1) 2))
+                  (left-trees (cbal-tree k))
+                  (right-trees (cbal-tree k)))
+             (dolist (left left-trees)
+               (dolist (right right-trees)
+                 (push (list 'x left right) trees))))
+         (let* ((k (/ n 2))
+                (left-trees1 (cbal-tree k))
+                (right-trees1 (cbal-tree (- k 1)))
+                (left-trees2 (cbal-tree (- k 1)))
+                (right-trees2 (cbal-tree k)))
+           (dolist (left left-trees1)
+             (dolist (right right-trees1)
+               (push (list 'x left right) trees)))
+           (dolist (left left-trees2)
+             (dolist (right right-trees2)
+               (push (list 'x left right) trees)))))
+       trees))))
+
+;; example usage
+(cbal-tree 1) ;; => ((x nil nil))
+(cbal-tree 2) ;; => ((x nil (x nil nil)) (x (x nil nil) nil))
+(cbal-tree 4) ;; => ((x (x nil nil) (x (x nil nil) nil)) (x (x nil nil) (x nil (x nil nil))) (x (x (x nil nil) nil) (x nil nil)) (x (x nil (x nil nil)) (x nil nil)))
